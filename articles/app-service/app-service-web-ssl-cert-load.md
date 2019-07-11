@@ -129,3 +129,14 @@ string certPath = Server.MapPath("~/certs/mycert.pfx");
 X509Certificate2 cert = GetCertificate(certPath, signatureBlob.Thumbprint);
 ...
 ```
+For Java use following step for keystore configuration that does not require admin right:
+ 
+On development environment - import the public certificate in a new keystore.
+Load the new keystore on webapp Azure via FTP or Kudu (D:/home/site/wwwroot/cer/myKeystore.jks)
+Add these java entries and restart service:
+
+Djavax.net.ssl.trustStore=D:/home/site/wwwroot/cer/myKeystore.jks
+Djavax.net.ssl.trustStorePassword=*********
+
+NOTE: An executable JAR with web.config can be found at https://github.com/toanms/toanjavacertstore.  To run the sample, unzip the contents into the wwwroot of your app, turn on Java 8 with minor version 1.8.0_172, and visit the site.  A log file will be generated in wwwroot with the names/aliases for the SSL certificates that are available.
+ 
