@@ -127,4 +127,7 @@ Once deployment has completed, browse to the deployed application using the foll
 > [Azure for Java Developers Resources](/java/azure/)
 
 > [!div class="nextstepaction"]
+> [Binding SSL in Keystore on AppService](/java/azure/app-service-web-ssl-cert-load.md)
+
+> [!div class="nextstepaction"]
 > [Map custom domain](app-service-web-tutorial-custom-domain.md)
